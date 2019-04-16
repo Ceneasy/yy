@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Yan yu!</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="container">
+    <div class="say">
+        <p id="uknow"> </br>
+
+     </p>
+    </div>
+</div>
+
+<bgsound src="happy.mp3" loop="-1"> </bgsound>
+<audio src="happy.mp3"autoplay="true"> </audio>
+
+<script>
+    let divTyping = document.getElementById('uknow')
+    let i = 0,
+        timer = 0,
+        str = 'Yan yu，happy birthday\n' +
+            '——人面不知何处去，桃花依旧笑春风'
+
+    function typing () {
+        if (i <= str.length) {
+            divTyping.innerHTML = str.slice(0, i++) + '_'
+            timer = setTimeout('typing()', 200)
+        }
+        else {
+            divTyping.innerHTML = str//结束打字,移除 _ 光标
+            clearTimeout(timer)
+        }
+    }
+    typing();
+
+
+</script>
+</body>
+</html>
